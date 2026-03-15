@@ -3,13 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Detail</title>
+  <title>求人詳細</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Job Detail</h1>
-    <p>This is a placeholder page for job details.</p>
-  </main>
+<body class="job-detail-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+
+    <div class="top-hero">
+      <h1>求人詳細</h1>
+      <p>仕事内容・勤務地・給与を確認し、条件が合えば応募してください。</p>
+    </div>
+
+    <p class="message-error" id="detail-error" style="display:none;"></p>
+
+    <table class="x1 top-table" id="detail-table">
+      <tr><th colspan="2" class="x2">求人詳細</th></tr>
+      <tr><th>求人タイトル</th><td id="job-title"></td></tr>
+      <tr><th>給与</th><td id="job-salary"></td></tr>
+      <tr><th>勤務地</th><td id="job-area"></td></tr>
+      <tr><th>投稿日</th><td id="job-created-at"></td></tr>
+      <tr><th>公開状態</th><td id="job-status"></td></tr>
+      <tr><th>求人説明</th><td class="job-description" id="job-description"></td></tr>
+      <tr><th>応募</th><td id="apply-cell"></td></tr>
+    </table>
+
+    <p><a href="jobs.html">求人一覧へ戻る</a></p>
+  </div>
+  <script src="job_detail.js"></script>
 </body>
 </html>
