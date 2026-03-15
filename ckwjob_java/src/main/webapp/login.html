@@ -3,13 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>ログイン / 会員登録</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Login</h1>
-    <p>This is a placeholder page for login and signup.</p>
-  </main>
+<body class="login-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+
+    <div class="top-hero">
+      <h1>ログイン / 会員登録</h1>
+      <p>求職者・企業のどちらでも、ここから利用を開始できます。</p>
+    </div>
+
+    <div class="message-error" id="message-error" style="display:none;"></div>
+    <p class="message-success" id="message-success" style="display:none;"></p>
+
+    <table class="x1 top-table">
+      <tr>
+        <th colspan="2" class="x2">
+          <div class="auth-header-tabs">
+            <a href="#" id="tab-login" class="auth-tab-title is-active">ログイン</a>
+            <a href="#" id="tab-register" class="auth-tab-title">会員登録</a>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div id="login-form-wrap">
+            <h2>ログイン</h2>
+            <form id="login-form" action="#" method="post">
+              <div class="form-row">
+                メールアドレス<br>
+                <input type="email" name="email" class="xx">
+              </div>
+              <div class="form-row">
+                パスワード<br>
+                <input type="password" name="password" class="xx">
+              </div>
+              <div class="form-actions">
+                <input type="submit" value="ログイン" class="x4">
+              </div>
+            </form>
+          </div>
+          <div id="register-form-wrap" style="display:none;">
+            <h2>会員登録</h2>
+            <form id="register-form" action="#" method="post">
+              <div class="form-row">
+                氏名<br>
+                <input type="text" name="name" class="xx">
+              </div>
+              <div class="form-row">
+                メールアドレス<br>
+                <input type="email" name="email" class="xx">
+              </div>
+              <div class="form-row">
+                パスワード<br>
+                <input type="password" name="password" class="xx">
+              </div>
+              <div class="form-row">
+                電話番号<br>
+                <input type="text" name="phone" class="xx">
+              </div>
+              <div class="form-row">
+                ロール<br>
+                <select name="role" class="xx">
+                  <option value="job_seeker">求職者</option>
+                  <option value="company">企業</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <input type="submit" value="会員登録" class="x4">
+              </div>
+            </form>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="login.js"></script>
 </body>
 </html>
