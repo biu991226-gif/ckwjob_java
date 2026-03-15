@@ -3,13 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Page</title>
+  <title>個人ページ</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>My Page</h1>
-    <p>This is a placeholder page for the user dashboard.</p>
-  </main>
+<body class="my-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+
+    <div class="top-hero">
+      <h1>個人ページ</h1>
+      <p>応募した求人の履歴と状態を確認できます。</p>
+    </div>
+
+    <p class="message-error" id="my-error" style="display:none;"></p>
+
+    <table class="x1 top-table">
+      <tr><th colspan="3" class="x2">個人ページ</th></tr>
+      <tr><th>氏名</th><td colspan="2" id="my-name">-</td></tr>
+      <tr><th>ロール</th><td colspan="2" id="my-role">-</td></tr>
+      <tr>
+        <th>求人タイトル</th>
+        <th>応募日</th>
+        <th>状態</th>
+      </tr>
+      <tbody id="history-body">
+        <tr><td colspan="3">読み込み中...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="my.js"></script>
 </body>
 </html>

@@ -3,13 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jobs</title>
+  <title>求人一覧</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Jobs</h1>
-    <p>This is a placeholder page for the jobs list.</p>
-  </main>
+<body class="jobs-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+
+    <div class="top-hero">
+      <h1>求人一覧</h1>
+      <p>条件に合う求人を検索し、詳細画面から応募できます。</p>
+    </div>
+
+    <p class="message-error" id="jobs-error" style="display:none;"></p>
+
+    <table class="x1 top-table">
+      <tr><th colspan="6" class="x2">求人一覧</th></tr>
+      <tr>
+        <td colspan="6">
+          <form action="#" method="get" class="top-search-form">
+            <label for="keyword">キーワード</label><br>
+            <input type="text" name="keyword" id="keyword" class="xx" value="">
+            <input type="submit" value="検索" class="x4">
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <th>タイトル</th>
+        <th>給与</th>
+        <th>勤務地</th>
+        <th>募集状態</th>
+        <th>投稿日</th>
+        <th>応募状況</th>
+      </tr>
+      <tbody id="jobs-body">
+        <tr><td colspan="6">読み込み中...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="jobs.js"></script>
 </body>
 </html>
