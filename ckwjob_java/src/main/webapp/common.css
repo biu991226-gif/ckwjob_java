@@ -66,7 +66,10 @@ table.x1 {
 }
 
 body.top-page,
-body.login-page {
+body.login-page,
+body.jobs-page,
+body.job-detail-page,
+body.my-page {
     font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
     margin: 0;
     padding: 24px 0 40px;
@@ -74,13 +77,19 @@ body.login-page {
 }
 
 body.top-page .page-wrap,
-body.login-page .page-wrap {
+body.login-page .page-wrap,
+body.jobs-page .page-wrap,
+body.job-detail-page .page-wrap,
+body.my-page .page-wrap {
     width: 920px;
     margin: 0 auto;
 }
 
 body.top-page .top-nav,
-body.login-page .top-nav {
+body.login-page .top-nav,
+body.jobs-page .top-nav,
+body.job-detail-page .top-nav,
+body.my-page .top-nav {
     background: #0f2747;
     border-radius: 10px;
     padding: 10px 14px;
@@ -93,7 +102,10 @@ body.login-page .top-nav {
 }
 
 body.top-page .top-nav-left,
-body.login-page .top-nav-left {
+body.login-page .top-nav-left,
+body.jobs-page .top-nav-left,
+body.job-detail-page .top-nav-left,
+body.my-page .top-nav-left {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -101,14 +113,20 @@ body.login-page .top-nav-left {
 }
 
 body.top-page .top-nav-right,
-body.login-page .top-nav-right {
+body.login-page .top-nav-right,
+body.jobs-page .top-nav-right,
+body.job-detail-page .top-nav-right,
+body.my-page .top-nav-right {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 body.top-page .top-nav a,
-body.login-page .top-nav a {
+body.login-page .top-nav a,
+body.jobs-page .top-nav a,
+body.job-detail-page .top-nav a,
+body.my-page .top-nav a {
     color: #ffffff;
     text-decoration: none;
     margin-right: 16px;
@@ -116,18 +134,27 @@ body.login-page .top-nav a {
 }
 
 body.top-page .top-nav a:hover,
-body.login-page .top-nav a:hover {
+body.login-page .top-nav a:hover,
+body.jobs-page .top-nav a:hover,
+body.job-detail-page .top-nav a:hover,
+body.my-page .top-nav a:hover {
     text-decoration: underline;
 }
 
 body.top-page .nav-user-text,
-body.login-page .nav-user-text {
+body.login-page .nav-user-text,
+body.jobs-page .nav-user-text,
+body.job-detail-page .nav-user-text,
+body.my-page .nav-user-text {
     color: #dbe7f8;
     font-size: 13px;
 }
 
 body.top-page .top-hero,
-body.login-page .top-hero {
+body.login-page .top-hero,
+body.jobs-page .top-hero,
+body.job-detail-page .top-hero,
+body.my-page .top-hero {
     background: linear-gradient(135deg, #184780, #2f70ba);
     color: #ffffff;
     border-radius: 12px;
@@ -136,20 +163,29 @@ body.login-page .top-hero {
 }
 
 body.top-page .top-hero h1,
-body.login-page .top-hero h1 {
+body.login-page .top-hero h1,
+body.jobs-page .top-hero h1,
+body.job-detail-page .top-hero h1,
+body.my-page .top-hero h1 {
     margin: 0;
     font-size: 30px;
 }
 
 body.top-page .top-hero p,
-body.login-page .top-hero p {
+body.login-page .top-hero p,
+body.jobs-page .top-hero p,
+body.job-detail-page .top-hero p,
+body.my-page .top-hero p {
     margin: 8px 0 0;
     font-size: 14px;
     opacity: 0.95;
 }
 
 body.top-page table.x1,
-body.login-page table.x1 {
+body.login-page table.x1,
+body.jobs-page table.x1,
+body.job-detail-page table.x1,
+body.my-page table.x1 {
     width: 100%;
     background: #ffffff;
 }
@@ -157,25 +193,40 @@ body.login-page table.x1 {
 body.top-page .x1 th,
 body.top-page .x1 td,
 body.login-page .x1 th,
-body.login-page .x1 td {
+body.login-page .x1 td,
+body.jobs-page .x1 th,
+body.jobs-page .x1 td,
+body.job-detail-page .x1 th,
+body.job-detail-page .x1 td,
+body.my-page .x1 th,
+body.my-page .x1 td {
     border: 1px solid #d7dfeb;
     padding: 12px;
 }
 
 body.top-page .x2,
-body.login-page .x2 {
+body.login-page .x2,
+body.jobs-page .x2,
+body.job-detail-page .x2,
+body.my-page .x2 {
     font-size: 22px;
     background: #f8fafc;
 }
 
 body.top-page .xx,
-body.login-page .xx {
+body.login-page .xx,
+body.jobs-page .xx,
+body.job-detail-page .xx,
+body.my-page .xx {
     border: 1px solid #c7d2e3;
     border-radius: 6px;
 }
 
 body.top-page .x4,
-body.login-page .x4 {
+body.login-page .x4,
+body.jobs-page .x4,
+body.job-detail-page .x4,
+body.my-page .x4 {
     border: 0;
     border-radius: 6px;
     background: #1d67b5;
@@ -184,18 +235,29 @@ body.login-page .x4 {
 }
 
 body.top-page .x4:hover,
-body.login-page .x4:hover {
+body.login-page .x4:hover,
+body.jobs-page .x4:hover,
+body.job-detail-page .x4:hover,
+body.my-page .x4:hover {
     background: #16579a;
 }
 
 body.top-page .top-table,
-body.login-page .top-table {
+body.login-page .top-table,
+body.jobs-page .top-table,
+body.job-detail-page .top-table,
+body.my-page .top-table {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 6px 16px rgba(18, 35, 57, 0.08);
 }
 
 body.top-page .top-search-form .xx {
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+body.jobs-page .top-search-form .xx {
     margin-top: 4px;
     margin-bottom: 10px;
 }
@@ -253,4 +315,8 @@ body.top-page .job-meta {
     border-radius: 999px;
     padding: 2px 10px;
     margin-right: 8px;
+}
+
+body.job-detail-page .job-description {
+    line-height: 1.8;
 }
