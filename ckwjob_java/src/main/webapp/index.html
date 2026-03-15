@@ -3,25 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ckwjob</title>
+  <title>トップページ</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>ckwjob Java</h1>
-    <p>Java Servlet version of the ckwjob project.</p>
-    <p>This is the initial skeleton. Each page is a placeholder for now.</p>
-    <div class="nav">
-      <a href="login.html">login.html</a>
-      <a href="jobs.html">jobs.html</a>
-      <a href="job_detail.html">job_detail.html</a>
-      <a href="my.html">my.html</a>
-      <a href="apply.html">apply.html</a>
-      <a href="add_job.html">add_job.html</a>
-      <a href="manage_jobs.html">manage_jobs.html</a>
-      <a href="job_applicants.html">job_applicants.html</a>
-      <a href="logout.html">logout.html</a>
+<body class="top-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
     </div>
-  </main>
+
+    <div class="top-hero">
+      <h1>求人サイト</h1>
+      <p>エリア・職種・給与から、自分に合う仕事を探せます。</p>
+    </div>
+
+    <p class="notice" id="login-notice">未ログインです。応募や管理機能を使う場合はログインしてください。</p>
+    <p class="message-error" id="db-error" style="display:none;"></p>
+
+    <table class="x1 top-table">
+      <tr>
+        <th colspan="2" class="x2">求人検索</th>
+      </tr>
+      <tr>
+        <th>検索</th>
+        <td>
+          <form action="#" method="get" class="top-search-form">
+            <label for="keyword">キーワード</label><br>
+            <input type="text" name="keyword" id="keyword" class="xx" value="">
+            <input type="submit" value="検索" class="x4 top-search-btn">
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <th>新着求人（最大10件）</th>
+        <td id="jobs-container"></td>
+      </tr>
+    </table>
+  </div>
+  <script src="index.js"></script>
 </body>
 </html>
