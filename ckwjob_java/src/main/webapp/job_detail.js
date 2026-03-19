@@ -71,10 +71,7 @@ function renderApply(data) {
   }
 
   container.innerHTML = `
-    <form action="${contextPath}/Apply" method="post">
-      <input type="hidden" name="job_id" value="${job.id}">
-      <input type="submit" value="応募する" class="x4">
-    </form>
+    <a href="${contextPath}/apply.html?job_id=${job.id}" class="apply-action-link">応募する</a>
   `;
 }
 
