@@ -1,7 +1,5 @@
 function escapeHtml(value) {
-  if (value == null) {
-    return "";
-  }
+  if (value == null) return "";
   return String(value)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -11,16 +9,8 @@ function escapeHtml(value) {
 }
 
 function formatDate(value) {
-  if (!value) {
-    return "";
-  }
+  if (!value) return "";
   return value.slice(0, 10).replace(/-/g, "/");
-}
-
-function roleLabel(role) {
-  if (role === "job_seeker") return "求職者";
-  if (role === "company") return "企業";
-  return role || "未ログイン";
 }
 
 function statusLabel(status) {
@@ -31,7 +21,7 @@ function statusLabel(status) {
   return status || "";
 }
 
-function updateNav(data) {
+function updateCompanyNav(data) {
   const left = document.getElementById("top-nav-left");
   const right = document.getElementById("top-nav-right");
   const contextPath = window.location.pathname.split("/").slice(0, 2).join("/");
@@ -48,6 +38,7 @@ function updateNav(data) {
     leftHtml += `<a href="${contextPath}/my.html">個人ページ</a>`;
     if (data.currentRole === "company") {
       leftHtml += `<a href="${contextPath}/manage_jobs.html">求人管理</a>`;
+      leftHtml += `<a href="${contextPath}/add_job.html">求人登録</a>`;
     }
     right.innerHTML = `
       <span class="nav-user-text">ログイン中: ${escapeHtml(data.currentName)}</span>
@@ -58,12 +49,16 @@ function updateNav(data) {
   left.innerHTML = leftHtml;
 }
 
-async function loadMy() {
-  const response = await fetch("My");
+async function loadApplicants() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id") || "";
+  const response = await fetch(`JobApplicants?${new URLSearchParams({ id })}`);
   const data = await response.json();
-  updateNav(data);
+  updateCompanyNav(data);
 
-  const errorBox = document.getElementById("my-error");
+  document.getElementById("applicants-job-title").textContent = data.jobTitle || id;
+
+  const errorBox = document.getElementById("applicants-error");
   if (data.error) {
     errorBox.textContent = data.error;
     errorBox.style.display = "block";
@@ -71,30 +66,27 @@ async function loadMy() {
     errorBox.style.display = "none";
   }
 
-  document.getElementById("my-name").textContent = data.currentName || "ゲスト";
-  document.getElementById("my-role").textContent = roleLabel(data.currentRole);
-
-  const body = document.getElementById("history-body");
-  const contextPath = window.location.pathname.split("/").slice(0, 2).join("/");
-
-  if (!data.history || data.history.length === 0) {
-    body.innerHTML = `<tr><td colspan="3">応募履歴はまだありません。</td></tr>`;
+  const body = document.getElementById("applicants-body");
+  if (!data.error && (!data.applicants || data.applicants.length === 0)) {
+    body.innerHTML = `<tr><td colspan="5">応募者はまだいません。</td></tr>`;
     return;
   }
 
-  body.innerHTML = data.history.map((item) => `
+  body.innerHTML = (data.applicants || []).map((applicant) => `
     <tr>
-      <td><a href="${contextPath}/job_detail.html?id=${item.jobId}">${escapeHtml(item.title)}</a></td>
-      <td>${escapeHtml(formatDate(item.appliedAt))}</td>
-      <td>${escapeHtml(statusLabel(item.status))}</td>
+      <td>${escapeHtml(applicant.name)}</td>
+      <td>${escapeHtml(applicant.email)}</td>
+      <td>${escapeHtml(applicant.phone)}</td>
+      <td>${escapeHtml(formatDate(applicant.appliedAt))}</td>
+      <td>${escapeHtml(statusLabel(applicant.status))}</td>
     </tr>
   `).join("");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadMy().catch(() => {
-    const errorBox = document.getElementById("my-error");
-    errorBox.textContent = "個人ページの取得に失敗しました。";
+  loadApplicants().catch(() => {
+    const errorBox = document.getElementById("applicants-error");
+    errorBox.textContent = "応募者一覧の取得に失敗しました。";
     errorBox.style.display = "block";
   });
 });

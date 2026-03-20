@@ -3,13 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply</title>
+  <title>応募処理</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Apply</h1>
-    <p>This is a placeholder page for job application processing.</p>
-  </main>
+<body class="apply-page">
+  <div class="page-wrap">
+    <div class="top-hero">
+      <h1>応募処理</h1>
+      <p>応募結果を確認してください。</p>
+    </div>
+
+    <p id="apply-message"></p>
+
+    <table class="x1 top-table">
+      <tr><th class="x2">応募処理</th></tr>
+      <tr>
+        <td>
+          <div class="apply-result-text" id="apply-result-text">応募処理を実行しています...</div>
+          <div class="apply-actions">
+            <a href="my.html" class="apply-action-link">個人ページへ</a>
+            <a href="jobs.html" class="apply-action-link">求人一覧へ戻る</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="apply.js"></script>
 </body>
 </html>
