@@ -3,13 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Job</title>
+  <title>求人登録</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Add Job</h1>
-    <p>This is a placeholder page for creating a job post.</p>
-  </main>
+<body class="manage-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+    <div class="top-hero">
+      <h1>求人登録</h1>
+      <p>新しい求人を登録できます。登録後は求人管理画面で確認してください。</p>
+    </div>
+    <p class="message-error" id="add-job-error" style="display:none;"></p>
+    <p class="message-success" id="add-job-message" style="display:none;"></p>
+    <table class="x1 top-table">
+      <tr><th colspan="2" class="x2">求人登録</th></tr>
+      <tr>
+        <td colspan="2">
+          <form id="add-job-form">
+            <div class="form-row">求人タイトル<br><input type="text" name="title" class="xx"></div>
+            <div class="form-row">給与<br><input type="text" name="salary" class="xx"></div>
+            <div class="form-row">勤務地<br><input type="text" name="area" class="xx"></div>
+            <div class="form-row">求人説明<br><textarea name="description" rows="6" class="xx"></textarea></div>
+            <div class="form-actions">
+              <input type="submit" value="登録" class="x4">
+              <a href="manage_jobs.html">求人管理へ戻る</a>
+            </div>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="add_job.js"></script>
 </body>
 </html>

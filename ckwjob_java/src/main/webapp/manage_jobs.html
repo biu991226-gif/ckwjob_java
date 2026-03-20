@@ -3,13 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manage Jobs</title>
+  <title>求人管理</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Manage Jobs</h1>
-    <p>This is a placeholder page for company job management.</p>
-  </main>
+<body class="manage-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+    <div class="top-hero">
+      <h1>求人管理</h1>
+      <p>自社が登録した求人の確認・応募者一覧確認・削除ができます。</p>
+    </div>
+    <p class="message-error" id="manage-error" style="display:none;"></p>
+    <p class="message-success" id="manage-message" style="display:none;"></p>
+    <table class="x1 top-table">
+      <tr><th colspan="7" class="x2">求人管理</th></tr>
+      <tr>
+        <th>タイトル</th>
+        <th>勤務地</th>
+        <th>募集状態</th>
+        <th>登録日</th>
+        <th>応募者数</th>
+        <th>応募者</th>
+        <th>削除</th>
+      </tr>
+      <tbody id="manage-jobs-body">
+        <tr><td colspan="7">読み込み中...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="manage_jobs.js"></script>
 </body>
 </html>

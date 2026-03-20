@@ -108,7 +108,7 @@ async function loadLoginState() {
       }
       right.innerHTML = `
         <span class="nav-user-text">ログイン中: ${escapeHtml(data.currentName)}（${escapeHtml(data.currentRole)}）</span>
-        <a href="${contextPath}/logout.html">logout</a>
+        <a href="${contextPath}/logout.html">ログアウト</a>
       `;
     } else {
       leftHtml += `<a href="${contextPath}/login.html">ログイン / 会員登録</a>`;
