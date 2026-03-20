@@ -41,7 +41,7 @@ function updateNav(data) {
     }
     right.innerHTML = `
       <span class="nav-user-text">ログイン中: ${escapeHtml(data.currentName)}</span>
-      <a href="${contextPath}/logout.html">logout</a>
+      <a href="${contextPath}/logout.html">ログアウト</a>
     `;
   }
 

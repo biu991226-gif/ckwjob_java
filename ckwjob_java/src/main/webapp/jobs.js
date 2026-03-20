@@ -63,7 +63,7 @@ function renderRows(data) {
     }
     const statusHtml = job.status === "open"
       ? `<span class="status-open">募集中</span>`
-      : `<span class="status-closed">已结束</span>`;
+      : `<span class="status-closed">募集終了</span>`;
     return `
       <tr>
         <td><a href="${contextPath}/job_detail.html?id=${job.id}">${escapeHtml(job.title)}</a></td>

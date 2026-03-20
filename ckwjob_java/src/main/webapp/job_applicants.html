@@ -3,13 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Applicants</title>
+  <title>応募者一覧</title>
   <link rel="stylesheet" href="common.css">
 </head>
-<body>
-  <main class="page">
-    <h1>Job Applicants</h1>
-    <p>This is a placeholder page for the applicant list.</p>
-  </main>
+<body class="applicants-page">
+  <div class="page-wrap">
+    <div class="top-nav">
+      <div class="top-nav-left" id="top-nav-left"></div>
+      <div class="top-nav-right" id="top-nav-right"></div>
+    </div>
+    <div class="top-hero">
+      <h1>応募者一覧</h1>
+      <p>対象求人: <span id="applicants-job-title">-</span></p>
+    </div>
+    <p class="message-error" id="applicants-error" style="display:none;"></p>
+    <table class="x1 top-table">
+      <tr><th colspan="5" class="x2">応募者一覧</th></tr>
+      <tr>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>電話番号</th>
+        <th>応募日</th>
+        <th>状態</th>
+      </tr>
+      <tbody id="applicants-body">
+        <tr><td colspan="5">読み込み中...</td></tr>
+      </tbody>
+    </table>
+    <p><a href="manage_jobs.html">求人管理へ戻る</a></p>
+  </div>
+  <script src="job_applicants.js"></script>
 </body>
 </html>
